@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<!-- le head tiene todo lo necesario para la correcta interpretación del código. -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Podríamos usar Bootstrap</title>
+    <!-- con el link se hace referencia de hipertexto para ir a buscar el código a bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <!--el body tiene todo lo que se va a mostrar en la página  -->
+  <body>
+    <!-- container fluid es un contenedor que va a ocupar todo el espacio -->
+    <div class="container-fluid m-0 p-0">
+      <div class="row row-cols-2 g-0" style="height:100vh">
+      <!-- depende de lo que se acompale al bg despues del gíón el color que va a tomar ese fondo -->
+        <div class="h-100 bg-info d-flex align-items-center justify-content-center">
+          <!-- el svg es otro lenguaje entonces cuando se mete en el código es una especie de stop, svg es básicamente para gráficas -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
+            <!-- cuando se escribe g es declarar que ahí hay un grupo de gráficas -->
+            <g id="primera"></g>
+          </svg>
+        </div>
+        <div class="h-100 bg-success d-flex align-items-center justify-content-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
+            <g id="segunda"></g>
+          </svg>          
+        </div>
+      </div>
+    </div>
+    <script>
+      //  se define una constante llamada data que contiene un arreglo, estos número son el radio, por eso si el número es mayor que 50 se vuelve todo el cuadro negro
+      const data = [25,25,20,1,50,78];
+      //fuente: https://es.wikipedia.org/wiki/Anexo:Poblaci%C3%B3n_animal_mundial cantidad de perros vs de gatos en el mundo
+      const primerValor = 23;
+      const segundoValor = 30;
+      let cero = document.querySelector("#primera");
+      // dentro de cero se le agrega un círculo
+      cero.innerHTML = `<circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray="${primerValor} ${100-primerValor}" stroke-dashoffset="0"></circle><text x="20" y="20" font-size="3">${primerValor}%</text>`;
+      let uno = document.querySelector("#segunda");
+      // si se agrega fill="un color" se puede cambiar el color del círculo
+      uno.innerHTML = `<circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+  <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3" stroke-dasharray="${segundoValor} ${100-segundoValor}" stroke-dashoffset="0"></circle><text x="20" y="20" font-size="3">${segundoValor}%</text>`;
+    </script>
+  </body>
+</html>
+
+<!--  Repositorio: https://github.com/Trinidad-Forster/C1_06-03 Dirección repositorio: https://trinidad-forster.github.io/C1_06-03/-->
